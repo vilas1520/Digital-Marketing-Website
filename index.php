@@ -4,9 +4,14 @@ $Email = $_POST['Email'] ?? '';
 $Mobile = $_POST['Mobile'] ?? '';
 $Website = $_POST['Website'] ?? '';
 
-$conn = mysqli_connect("localhost", "root", "", "digital");
+// 🛠️ Replace 'localhost' with 'db'
+$conn = mysqli_connect("db", "root", "root", "digital");
 
 $sql = "INSERT INTO `userdata` (`Name`, `Email`, `Mobile`, `Website`) VALUES ('$Name','$Email','$Mobile','$Website')";
 
-mysqli_query($conn, $sql);
+if ($conn && mysqli_query($conn, $sql)) {
+    echo "Contact Records Inserted";
+} else {
+    echo "Error: " . mysqli_error($conn);
+}
 ?>
