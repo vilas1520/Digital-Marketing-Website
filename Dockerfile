@@ -1,16 +1,17 @@
-FROM php:8.1-fpm-alpine
+FROM php:8.2-fpm
 
-# Install Nginx
-RUN apk add --no-cache nginx
+# Install Nginx and required PHP extensions
+RUN apt-get update && apt-get install -y nginx \
+    && docker-php-ext-install mysqli pdo pdo_mysql
 
-# Copy your project files
+# Copy project files to /var/www/html
 COPY . /var/www/html
 
-# Copy Nginx config file
-COPY default.conf /etc/nginx/conf.d/default.conf
+# Copy nginx config
+COPY default.conf /etc/nginx/sites-available/default
 
-# Expose port 80
+# Expose port
 EXPOSE 80
 
-# Start PHP-FPM and Nginx together
-CMD ["/bin/sh", "-c", "php-fpm & nginx -g 'daemon off;'"]
+# Start both PHP-FPM and Nginx
+CMD service nginx start && php-fpm
