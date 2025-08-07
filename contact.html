@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Website</title>
+     <!--/*font awesome icons*/-->
+     <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&family=Rubik:ital,wght@0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+<link type="text/css" rel="stylesheet" href="style.css">
+
+<link type="text/css" rel="stylesheet" href="css/media.css" />
+
+<!--jquery ui files-->
+<link type="text/css" rel="stylesheet" href="css/jquery-ui.structure.min.css" />
+<link type="text/css" rel="stylesheet" href="css/jquery-ui.theme.min.css" />
+
+<!--owl carousel-->
+<link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css" />
+<link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <div class="top-bar">
+                <div class="nav-col">
+                <div class="logo">
+                    <img src="images/logo.png" class="img-responsive" alt="logo"/>
+
+                </div>
+                <!--logo-->
+                <div class="menu">
+                    <a  href="index.html">Home</a>
+                    <a href="about.html">About US</a>
+                    <a href="services.html">Services</a>
+                    <a href="project.html">Project</a>
+                    <a href="blog.html">Blog</a>
+                    <a class="active" href="contact.html">Contact Us</a>
+                </div>
+            </div>
+                
+            <!--nav-col-->
+            <div class="cnt-info-col">
+                <a href="tel:7652000000"><span>Call US:</span>7652000000</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--top-bar-->
+    </div>
+     
+</header>
+    
+<section id="contact">
+    <div class="container">
+        <div class="form-par">
+            <h2>Get In Touch With US!</h2>
+            <form name="contact" method="post" action="index.php">
+                <p>
+                <input type="text" placeholder="Your Name"  name="Name" class="f-name form-com" />
+                </p>
+                <p>
+                <input type="email" placeholder="Email" name="Email"  class="em-input form-com" />
+                </p>
+                <p>
+                <input type="text" id="class"  name="Mobile" class="phone-input form-com" placeholder="Mobile No"  required>
+                </p>
+                <p>
+                <input type="text" placeholder="Website" name="Website" class="web-input form-com" />
+                </p>
+                <p>
+                <input type="submit" value="submit" name="Submit" class="submit-btn" />
+                </p>
+            </form>
+        </div>
+    </div>
+    <!--container-->
+</section>
+<!--contact-->
+
+<footer>
+    <div class="container">
+        <div class="footer-col">
+            <h3>About Us</h3>
+            <p>We focus on the needs of small to middle market businesses to 
+                improve and grow their return.so that your site will withstand the test of time.
+                 We care about your business, which is why we work with you.</p>
+                 <div class="social-icons-footer">
+                    <i class="fa fa-facebook-square"></i>
+                    <i class="fa fa-twitter-square"></i>
+                    <i class="fa fa-instagram"></i> 
+                    <i class="fa fa-youtube-square"></i>
+                 </div>
+        </div>
+        <!--footer-col-->
+        <div class="footer-col footer-2-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Services</li>
+                <li>portfolio</li>
+                <li>Blog</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <!--footer-col-->
+        <div class="footer-col">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-envelope-o"></i><a href="mailto:demo@gmail.com">demo@gmail.com</a></p>
+            <p><i class="fa fa-mobile-phone"></i><a href="tel:9855679085">9855679085</a></p>
+            <p><i class="fa fa-map-o"></i><span>sector-13,Khanda colony,Navi Mumbai,410206,INDIA</span></p>
+        </div>
+        <!--footer-col-->
+        <div class="clear"></div>
+        <hr class="footer-hr">
+        <p class="copyright-footer">&copy;2023-Websblog.All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+
+
+<script type="text/javascript" src="Js/jquery-3.2.1.min.js"></script>
+<script src="Js/jquery-ui.min.js"></script>
+<script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
+<script type="text/javascript" src="Js/owl.carousel.min.js"></script>
+<script src="js/externaljq.js" type="text/javascript"></script>
+</body>
+<script>
+    $(document).ready(function() {
+        $("#toggle-bar").click(function (){
+            $(".menu").slideToggle(400);
+         });
+    });
+</script>
+
+</html>
