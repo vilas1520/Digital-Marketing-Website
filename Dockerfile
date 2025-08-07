@@ -1,14 +1,16 @@
-# Use official Nginx image as base
-FROM nginx:alpine
+FROM php:8.1-fpm-alpine
 
-# Remove default nginx web content
-RUN rm -rf /usr/share/nginx/html/*
+# Install Nginx
+RUN apk add --no-cache nginx
 
-# Copy project static files into Nginx web directory
-COPY . /usr/share/nginx/html
+# Copy your project files
+COPY . /var/www/html
 
-# Expose port 80 to the host
+# Copy Nginx config file
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
 EXPOSE 80
 
-# Start Nginx when the container launches
-CMD ["nginx", "-g", "daemon off;"]
+# Start PHP-FPM and Nginx together
+CMD ["/bin/sh", "-c", "php-fpm & nginx -g 'daemon off;'"]
