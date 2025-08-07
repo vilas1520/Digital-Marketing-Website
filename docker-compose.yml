@@ -3,6 +3,22 @@ version: '3.8'
 services:
   web:
     build: .
+    container_name: digital-marketing-web
     ports:
-      - "8080:80"
-    container_name: digital_marketing_site
+      - "8081:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: digital-marketing-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: digital
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
