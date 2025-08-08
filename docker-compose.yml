@@ -9,15 +9,20 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: digital
     volumes:
+      - mysql_data:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
 
   web:
     build: .
-    container_name: digital-marketing-container
     ports:
       - "8081:80"
     depends_on:
       - db
+    volumes:
+      - .:/var/www/html
     restart: always
+
+volumes:
+  mysql_data:
