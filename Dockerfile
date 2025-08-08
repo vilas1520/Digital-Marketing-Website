@@ -1,14 +1,11 @@
-# Use official PHP image with Apache
 FROM php:8.1-apache
 
-# Enable mysqli extension
 RUN docker-php-ext-install mysqli
 
-# Copy source code to container
+RUN echo "DirectoryIndex index.html index.php" >> /etc/apache2/apache2.conf
+
 COPY . /var/www/html/
 
-# Give proper permissions
 RUN chown -R www-data:www-data /var/www/html
 
-# Expose Apache port
 EXPOSE 80
